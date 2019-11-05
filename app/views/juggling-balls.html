@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/start">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl"></h1>
+
+      <form class="form" action="/juggling-balls-answer" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                How many balls can you juggle?
+              </h1>
+            </legend>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-many-balls" name="how-many-balls" type="radio" value="3 or more" {{ checked("how-many-balls", "3 or more") }}>
+                <label class="govuk-label govuk-radios__label" for="how-many-balls">
+                  3 or more
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-many-balls-2" name="how-many-balls" type="radio" value="1 or 2" {{ checked("how-many-balls", "1 or 2") }}>
+                <label class="govuk-label govuk-radios__label" for="how-many-balls-2">
+                  1 or 2
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-many-balls-3" name="how-many-balls" type="radio" value="None - I cannot juggle" {{ checked("how-many-balls", "None - I cannot juggle") }}>
+                <label class="govuk-label govuk-radios__label" for="how-many-balls-3">
+                  None - I cannot juggle
+                </label>
+            </div>
+          </fieldset>
+        </div>
+         
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help with juggling balls
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            We need to know how many balls you can juggle to determine which licence you’re entitled to.
+          </div>
+        </details>
+        
+        
+        <div class="govuk-inset-text">
+          It can take up to 8 weeks to get the appropriate licence.
+        </div>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            You can be fined up to £5,000 if you do not register for a licence.
+          </strong>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+       
+    </div>
+  </div>
+
+{% endblock %}
